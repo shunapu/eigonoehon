@@ -368,6 +368,24 @@ a {
     --land: #8fbd77;
 }
 
+.page-art[data-scene^="river-"] {
+    background:
+        radial-gradient(ellipse at 77% 20%, rgba(255, 239, 178, .88) 0 8%, transparent 8.5%),
+        linear-gradient(180deg, #a8dce0 0%, #dce9c4 72%, #b6d394 100%);
+    --hill-back: #a7c995;
+    --land: #7eae83;
+}
+
+.page-art[data-scene="river-night"] {
+    background:
+        radial-gradient(ellipse at 76% 22%, #fff0bd 0 5%, transparent 5.5%),
+        radial-gradient(ellipse at 19% 18%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(ellipse at 52% 27%, #fff 0 1px, transparent 2px),
+        linear-gradient(180deg, #536b91 0%, #8597a0 69%, #9daa7c 100%);
+    --hill-back: #7a8d79;
+    --land: #667e68;
+}
+
 .sparkle-one {
     top: 19%;
     left: 19%;

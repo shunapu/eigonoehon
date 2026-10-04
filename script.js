@@ -92,6 +92,83 @@ const stories = {
                 scene: "seed-flower"
             }
         ]
+    },
+    river: {
+        title: "Pip and the Singing River",
+        pages: [
+            {
+                kicker: "A story of little helpers",
+                title: "Pip and the Singing River",
+                lines: ["A longer story about listening, trying, and helping together."],
+                scene: "river-cover"
+            },
+            {
+                kicker: "Page 1",
+                title: "A Quiet Morning",
+                lines: ["Pip walks beside the river after the rain.", "But today, the water is very quiet."],
+                scene: "river-quiet"
+            },
+            {
+                kicker: "Page 2",
+                title: "Thirsty Flowers",
+                lines: ["The little flowers by the path look droopy.", "“They need a drink,” says Pip."],
+                scene: "river-flowers"
+            },
+            {
+                kicker: "Page 3",
+                title: "A Clue in the Mud",
+                lines: ["Pip follows tiny streams through the grass.", "They lead to the old wooden bridge."],
+                scene: "river-bridge"
+            },
+            {
+                kicker: "Page 4",
+                title: "The Big Branch",
+                lines: ["A fallen branch is stuck between two stones.", "The water cannot get past it."],
+                scene: "river-blocked"
+            },
+            {
+                kicker: "Page 5",
+                title: "A Friend Arrives",
+                lines: ["Mia the rabbit comes with her little blue pail.", "“I will help you,” she says."],
+                scene: "river-friend"
+            },
+            {
+                kicker: "Page 6",
+                title: "Too Heavy!",
+                lines: ["They push the branch. They pull the branch.", "It does not move even a little."],
+                scene: "river-try"
+            },
+            {
+                kicker: "Page 7",
+                title: "A Clever Idea",
+                lines: ["Pip sees a narrow gap beside the stones.", "“Let's make a path for the water!”"],
+                scene: "river-idea"
+            },
+            {
+                kicker: "Page 8",
+                title: "Little by Little",
+                lines: ["Mia moves a pebble. Pip moves a leaf.", "Little by little, the gap grows wider."],
+                scene: "river-work"
+            },
+            {
+                kicker: "Page 9",
+                title: "The First Trickles",
+                lines: ["Drip, drip… the water slips through.", "Then it rushes down the new little path!"],
+                scene: "river-flow"
+            },
+            {
+                kicker: "Page 10",
+                title: "The Meadow Smiles",
+                lines: ["The flowers lift their heads and drink.", "Mia and Pip smile at their bright colors."],
+                scene: "river-meadow"
+            },
+            {
+                kicker: "The end",
+                title: "A River Song",
+                lines: ["That evening, the river sings under the stars.", "Pip listens. Helping together feels good."],
+                scene: "river-night"
+            }
+        ]
     }
 };
 
@@ -127,7 +204,19 @@ const sceneDetails = {
     "seed-watered": { character: "rabbit", prop: "watering" },
     "seed-waiting": { character: "rabbit", prop: "sunshine" },
     "seed-sprout": { character: "rabbit", prop: "sprout" },
-    "seed-flower": { character: "rabbit", prop: "flower" }
+    "seed-flower": { character: "rabbit", prop: "flower" },
+    "river-cover": { prop: "river-book" },
+    "river-quiet": { prop: "river-stones" },
+    "river-flowers": { prop: "river-flowers" },
+    "river-bridge": { prop: "river-bridge" },
+    "river-blocked": { prop: "river-branch" },
+    "river-friend": { prop: "river-pail" },
+    "river-try": { prop: "river-branch" },
+    "river-idea": { prop: "river-gap" },
+    "river-work": { prop: "river-pebbles" },
+    "river-flow": { prop: "river-flow" },
+    "river-meadow": { prop: "river-flowers" },
+    "river-night": { prop: "river-moon" }
 };
 
 function illustrationFor(scene) {
@@ -171,6 +260,16 @@ function illustrationFor(scene) {
         </g>`;
     const props = {
         book: `<g transform="translate(326 263) rotate(-9)" stroke="#806249" stroke-width="4" stroke-linejoin="round"><path d="M0 5 Q25 -3 47 8 L47 55 Q25 44 0 52Z" fill="#f4d477"/><path d="M47 8 Q69 -1 92 7 L92 53 Q68 44 47 55Z" fill="#fff0b5"/><path d="M47 8V55" fill="none"/><path d="M10 18Q25 13 37 19M57 18Q73 13 84 18" fill="none" stroke="#be8f62" stroke-width="2"/></g>`,
+        "river-book": `<path d="M314 285q28-36 60 0" fill="none" stroke="#6799a0" stroke-width="8" stroke-linecap="round"/><path d="M339 263l6-14 6 14 15 1-12 9 4 14-13-8-12 8 4-14-11-9Z" fill="#ffe077" stroke="#a77c4d" stroke-width="3" stroke-linejoin="round"/>`,
+        "river-stones": `<path d="M306 289q36-26 73-1" fill="none" stroke="#77aeb1" stroke-width="8" stroke-linecap="round"/><ellipse cx="329" cy="287" rx="15" ry="8" fill="#b8a58c" stroke="#806d59" stroke-width="3"/><ellipse cx="361" cy="286" rx="12" ry="7" fill="#d0bd9e" stroke="#806d59" stroke-width="3"/>`,
+        "river-flowers": `<path d="M328 298v-35m33 35v-48" stroke="#668858" stroke-width="4" stroke-linecap="round"/><g fill="#f3a69b" stroke="#a77c4d" stroke-width="2.5"><circle cx="328" cy="255" r="8"/><circle cx="321" cy="262" r="8"/><circle cx="335" cy="262" r="8"/><circle cx="328" cy="269" r="8"/><circle cx="361" cy="243" r="8"/><circle cx="354" cy="250" r="8"/><circle cx="368" cy="250" r="8"/><circle cx="361" cy="257" r="8"/></g><circle cx="328" cy="262" r="4" fill="#f5d16f"/><circle cx="361" cy="250" r="4" fill="#f5d16f"/>`,
+        "river-bridge": `<path d="M299 253q40-41 83 0v13h-83Z" fill="#c18b60" stroke="#806249" stroke-width="4"/><path d="M309 251v15m18-25v25m19-25v25m19-15v15" stroke="#f0c08b" stroke-width="4"/><path d="M301 279q37-22 75 0" fill="none" stroke="#74aeb2" stroke-width="8" stroke-linecap="round"/>`,
+        "river-branch": `<path d="M301 248q34 15 72-16m-38 13-14-19m20 11 16 18" fill="none" stroke="#896447" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="310" cy="282" rx="17" ry="9" fill="#b8a58c" stroke="#806d59" stroke-width="3"/><ellipse cx="357" cy="282" rx="15" ry="8" fill="#d0bd9e" stroke="#806d59" stroke-width="3"/><path d="M300 300q34-19 75 0" fill="none" stroke="#77aeb1" stroke-width="7" stroke-linecap="round"/>`,
+        "river-pail": `<g transform="translate(347 269)" stroke="#638698" stroke-width="4" stroke-linejoin="round"><path d="M-23-4h47l-6 41h-35Z" fill="#a9d7df"/><path d="M-16-5q0-28 19-28t19 28" fill="none"/><path d="M-13 10h28" stroke="#e8f2e8" stroke-width="3"/></g>`,
+        "river-gap": `<path d="M302 282q17-24 32 0t34 0" fill="none" stroke="#74aeb2" stroke-width="8" stroke-linecap="round"/><path d="M310 251l8 10m18-13 7 12m14-16 7 10" stroke="#896447" stroke-width="8" stroke-linecap="round"/><path d="M365 225l4 9 10 1-7 6 2 10-9-5-8 5 2-10-7-6 10-1Z" fill="#ffe077" stroke="#a77c4d" stroke-width="2.5" stroke-linejoin="round"/>`,
+        "river-pebbles": `<path d="M300 281q22-18 42 0t39 0" fill="none" stroke="#74aeb2" stroke-width="8" stroke-linecap="round"/><ellipse cx="312" cy="285" rx="12" ry="6" fill="#d0bd9e" stroke="#806d59" stroke-width="2"/><ellipse cx="354" cy="285" rx="13" ry="6" fill="#b8a58c" stroke="#806d59" stroke-width="2"/><path d="M330 249l7 9m13-15 6 10" stroke="#896447" stroke-width="7" stroke-linecap="round"/>`,
+        "river-flow": `<path d="M299 273q20-18 40 0t40 0m-75 18q20-18 40 0t40 0" fill="none" stroke="#6eb6c0" stroke-width="7" stroke-linecap="round"/><path d="M320 246l5 8m16-11 5 8" stroke="#896447" stroke-width="8" stroke-linecap="round"/><path d="M328 264l6 5 6-5m5 18 6 5 6-5" fill="none" stroke="#eaf7ec" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`,
+        "river-moon": `<path d="M354 106a34 34 0 1 0 34 46 28 28 0 0 1-34-46Z" fill="#ffe6a0" stroke="#a77c4d" stroke-width="4"/><path d="M305 281q35-21 74 0" fill="none" stroke="#79b4bd" stroke-width="7" stroke-linecap="round"/><path d="M321 222l4 9 10 1-7 6 2 10-9-5-8 5 2-10-7-6 10-1Z" fill="#fff2c6" stroke="#a77c4d" stroke-width="2.5" stroke-linejoin="round"/>`,
         "falling-star": `<g transform="translate(329 123) rotate(19)"><path d="M-58 20L-5 -3" stroke="#fff4cc" stroke-width="10" stroke-linecap="round" opacity=".65"/><path d="M0 -24L8 -7 27 -5 13 8 16 27 0 18 -17 27 -13 8 -27 -5 -8 -7Z" fill="#ffd66e" stroke="#a77c4d" stroke-width="4" stroke-linejoin="round"/></g>`,
         "sad-star": `<g transform="translate(337 227)"><path d="M0 -52L15 -18 51 -16 24 8 32 44 0 25 -32 44 -24 8 -51 -16 -15 -18Z" fill="#ffd66e" stroke="#a77c4d" stroke-width="4" stroke-linejoin="round"/><path d="M-11 -8v3M11 -8v3M-9 11q9 -8 18 0" fill="none" stroke="#73534b" stroke-width="3" stroke-linecap="round"/><path d="M-1 -2q6 7 11 0" fill="none" stroke="#8ab8c2" stroke-width="3" stroke-linecap="round"/></g>`,
         "hill-star": `<path d="M336 177L346 200 371 202 352 219 357 244 336 231 315 244 320 219 301 202 327 200Z" fill="#ffd66e" stroke="#a77c4d" stroke-width="4" stroke-linejoin="round"/><path d="M310 291 Q340 269 376 281" fill="none" stroke="#806249" stroke-width="4" stroke-linecap="round"/>`,
