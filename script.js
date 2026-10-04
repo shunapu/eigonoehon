@@ -94,78 +94,108 @@ const stories = {
         ]
     },
     river: {
-        title: "Pip and the Singing River",
+        title: "Pip and the Little Blue Shell",
         pages: [
             {
-                kicker: "A story of little helpers",
-                title: "Pip and the Singing River",
-                lines: ["A longer story about listening, trying, and helping together."],
+                kicker: "A journey from forest to sea",
+                title: "Pip and the Little Blue Shell",
+                lines: ["A little shell has lost its way.", "Pip sets out to help it find the sea."],
                 scene: "river-cover"
             },
             {
                 kicker: "Page 1",
-                title: "A Quiet Morning",
-                lines: ["Pip walks beside the river after the rain.", "But today, the water is very quiet."],
-                scene: "river-quiet"
+                title: "A Find in the Forest",
+                lines: ["Pip finds a small blue shell beneath a fern.", "“The sea is my home,” it whispers."],
+                scene: "river-forest-find"
             },
             {
                 kicker: "Page 2",
-                title: "Thirsty Flowers",
-                lines: ["The little flowers by the path look droopy.", "“They need a drink,” says Pip."],
-                scene: "river-flowers"
+                title: "Follow the Stream",
+                lines: ["A silver stream curls through the trees.", "“This water knows the way,” says Pip."],
+                scene: "river-forest-stream"
             },
             {
                 kicker: "Page 3",
-                title: "A Clue in the Mud",
-                lines: ["Pip follows tiny streams through the grass.", "They lead to the old wooden bridge."],
-                scene: "river-bridge"
+                title: "Up, Up the Mountain",
+                lines: ["The stream leads Pip up a green mountain.", "He climbs slowly, step by step."],
+                scene: "river-mountain"
             },
             {
                 kicker: "Page 4",
-                title: "The Big Branch",
-                lines: ["A fallen branch is stuck between two stones.", "The water cannot get past it."],
-                scene: "river-blocked"
+                title: "Clouds on the Peak",
+                lines: ["At the top, clouds brush the quiet rocks.", "Pip hears a tiny trickle below."],
+                scene: "river-peak"
             },
             {
                 kicker: "Page 5",
-                title: "A Friend Arrives",
-                lines: ["Mia the rabbit comes with her little blue pail.", "“I will help you,” she says."],
-                scene: "river-friend"
+                title: "Down the Waterfall",
+                lines: ["The trickle tumbles down the mountain.", "Pip follows its bright, bubbly song."],
+                scene: "river-waterfall"
             },
             {
                 kicker: "Page 6",
-                title: "Too Heavy!",
-                lines: ["They push the branch. They pull the branch.", "It does not move even a little."],
-                scene: "river-try"
+                title: "A Busy Little Town",
+                lines: ["The stream runs past a town with red roofs.", "Pip asks a baker, “Does this water reach the sea?”"],
+                scene: "river-town"
             },
             {
                 kicker: "Page 7",
-                title: "A Clever Idea",
-                lines: ["Pip sees a narrow gap beside the stones.", "“Let's make a path for the water!”"],
-                scene: "river-idea"
+                title: "The Town Bridge",
+                lines: ["“Keep going,” says the baker with a smile.", "Pip waves as he crosses the old stone bridge."],
+                scene: "river-town-bridge"
             },
             {
                 kicker: "Page 8",
-                title: "Little by Little",
-                lines: ["Mia moves a pebble. Pip moves a leaf.", "Little by little, the gap grows wider."],
-                scene: "river-work"
+                title: "A Shady Green Path",
+                lines: ["Past the town, tall trees make a cool tunnel.", "The stream hurries along beside Pip."],
+                scene: "river-woods"
             },
             {
                 kicker: "Page 9",
-                title: "The First Trickles",
-                lines: ["Drip, drip… the water slips through.", "Then it rushes down the new little path!"],
-                scene: "river-flow"
+                title: "A River at Last",
+                lines: ["The little stream joins a wide, shining river.", "Pip sets the shell on a big green leaf."],
+                scene: "river-wide"
             },
             {
                 kicker: "Page 10",
-                title: "The Meadow Smiles",
-                lines: ["The flowers lift their heads and drink.", "Mia and Pip smile at their bright colors."],
-                scene: "river-meadow"
+                title: "Sailing on a Leaf",
+                lines: ["The leaf floats past reeds and yellow flowers.", "Pip walks along the bank to keep it safe."],
+                scene: "river-reeds"
+            },
+            {
+                kicker: "Page 11",
+                title: "The Long Bend",
+                lines: ["Round a bend, the river grows calm and broad.", "Little silver fish dart beneath the leaf."],
+                scene: "river-bend"
+            },
+            {
+                kicker: "Page 12",
+                title: "A First Look at the Sea",
+                lines: ["The air smells salty. The sky opens wide.", "“I think we are nearly there!” calls Pip."],
+                scene: "river-estuary"
+            },
+            {
+                kicker: "Page 13",
+                title: "The Sandy Shore",
+                lines: ["The river meets the blue, blue sea.", "Pip steps onto the warm and sandy beach."],
+                scene: "river-beach"
+            },
+            {
+                kicker: "Page 14",
+                title: "Home Again",
+                lines: ["A gentle wave carries the shell into the sea.", "“Thank you, Pip!” it sings."],
+                scene: "river-home"
+            },
+            {
+                kicker: "Page 15",
+                title: "A Shell's Song",
+                lines: ["The shell sings softly with the waves.", "Pip listens as the sun turns the water gold."],
+                scene: "river-sunset"
             },
             {
                 kicker: "The end",
-                title: "A River Song",
-                lines: ["That evening, the river sings under the stars.", "Pip listens. Helping together feels good."],
+                title: "The Way Home",
+                lines: ["Pip follows the river back to the forest.", "Now he knows: every little stream has a story."],
                 scene: "river-night"
             }
         ]
@@ -191,48 +221,92 @@ let currentStory = stories.pip;
 let currentPage = 0;
 
 const sceneDetails = {
-    cover: { prop: "book" },
-    "falling-star": { prop: "falling-star" },
-    "little-friend": { prop: "sad-star" },
-    "up-the-hill": { prop: "hill-star" },
-    "the-lift": { prop: "lift-star" },
-    "starry-home": { prop: "home-star" },
-    "good-night": { prop: "good-night" },
-    "seed-cover": { character: "rabbit", prop: "flowerpot" },
-    "seed-found": { character: "rabbit", prop: "seed" },
-    "seed-planted": { character: "rabbit", prop: "planted-seed" },
-    "seed-watered": { character: "rabbit", prop: "watering" },
-    "seed-waiting": { character: "rabbit", prop: "sunshine" },
-    "seed-sprout": { character: "rabbit", prop: "sprout" },
-    "seed-flower": { character: "rabbit", prop: "flower" },
-    "river-cover": { prop: "river-book" },
-    "river-quiet": { prop: "river-stones" },
-    "river-flowers": { prop: "river-flowers" },
-    "river-bridge": { prop: "river-bridge" },
-    "river-blocked": { prop: "river-branch" },
-    "river-friend": { prop: "river-pail" },
-    "river-try": { prop: "river-branch" },
-    "river-idea": { prop: "river-gap" },
-    "river-work": { prop: "river-pebbles" },
-    "river-flow": { prop: "river-flow" },
-    "river-meadow": { prop: "river-flowers" },
-    "river-night": { prop: "river-moon" }
+    cover: { place: "forest", prop: "book" },
+    "falling-star": { place: "night-forest", prop: "falling-star" },
+    "little-friend": { place: "forest", prop: "sad-star" },
+    "up-the-hill": { place: "mountain", prop: "hill-star" },
+    "the-lift": { place: "mountain", prop: "lift-star" },
+    "starry-home": { place: "night-forest", prop: "home-star" },
+    "good-night": { place: "night-forest", prop: "good-night" },
+    "seed-cover": { place: "garden", character: "rabbit", prop: "flowerpot" },
+    "seed-found": { place: "garden", character: "rabbit", prop: "seed" },
+    "seed-planted": { place: "garden", character: "rabbit", prop: "planted-seed" },
+    "seed-watered": { place: "garden", character: "rabbit", prop: "watering" },
+    "seed-waiting": { place: "garden", character: "rabbit", prop: "sunshine" },
+    "seed-sprout": { place: "garden", character: "rabbit", prop: "sprout" },
+    "seed-flower": { place: "garden", character: "rabbit", prop: "flower" },
+    "river-cover": { place: "forest", prop: "river-book" },
+    "river-forest-find": { place: "forest", prop: "shell" },
+    "river-forest-stream": { place: "forest", prop: "river-stones" },
+    "river-mountain": { place: "mountain", prop: "river-stones" },
+    "river-peak": { place: "mountain", prop: "river-stones" },
+    "river-waterfall": { place: "mountain", prop: "river-flow" },
+    "river-town": { place: "town", prop: "river-pail" },
+    "river-town-bridge": { place: "town", prop: "river-bridge" },
+    "river-woods": { place: "forest", prop: "river-flowers" },
+    "river-wide": { place: "river", prop: "river-pebbles" },
+    "river-reeds": { place: "river", prop: "river-flowers" },
+    "river-bend": { place: "river", prop: "river-flow" },
+    "river-estuary": { place: "sea", prop: "river-flow" },
+    "river-beach": { place: "sea", prop: "shell" },
+    "river-home": { place: "sea", prop: "shell" },
+    "river-sunset": { place: "sea", prop: "river-moon" },
+    "river-night": { place: "night-forest", prop: "river-moon" }
 };
 
 function illustrationFor(scene) {
     const details = sceneDetails[scene];
-    const sceneContext = scene.startsWith("river-")
-        ? `<g class="scene-context river-context">
-            <path d="M0 279 Q86 252 163 276 T320 276 T480 265 L480 322 Q396 311 319 326 T158 317 T0 329Z" fill="#8fc5c1" opacity=".48"/>
-            <path d="M0 291 Q94 270 166 292 T321 291 T480 279" fill="none" stroke="#e7f1d1" stroke-width="5" opacity=".62"/>
-            <path d="M44 278q5-15 11-19m-11 19q-9-10-14-10m351-2q5-15 11-19m-11 19q-9-10-14-10" fill="none" stroke="#739a6f" stroke-width="4" stroke-linecap="round"/>
+    const landscapes = {
+        forest: `<g class="scene-context forest-context">
+            <path d="M0 253Q98 230 175 257T331 252T480 243V360H0Z" fill="#92b47e" opacity=".48"/>
+            <path d="M16 267V118m0 3L-13 171m29-50 30 54M459 269V102m0 2-31 56m31-56 30 58" fill="none" stroke="#77654c" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M-13 177Q-25 119 16 93Q50 111 47 171Q21 154-13 177M428 160Q425 99 459 78Q495 104 489 167Q457 147 428 160" fill="#769b71" stroke="#64845f" stroke-width="4"/>
+            <path d="M71 287q4-22 12-27m-12 27q-10-13-17-13m280 13q5-20 13-25m-13 25q-10-12-17-12" fill="none" stroke="#638c68" stroke-width="4" stroke-linecap="round"/>
+        </g>`,
+        "night-forest": `<g class="scene-context forest-context">
+            <path d="M0 253Q98 230 175 257T331 252T480 243V360H0Z" fill="#536b68" opacity=".66"/>
+            <path d="M16 267V118m0 3L-13 171m29-50 30 54M459 269V102m0 2-31 56m31-56 30 58" fill="none" stroke="#514d56" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M-13 177Q-25 119 16 93Q50 111 47 171Q21 154-13 177M428 160Q425 99 459 78Q495 104 489 167Q457 147 428 160" fill="#546d6b" stroke="#485f60" stroke-width="4"/>
+        </g>`,
+        mountain: `<g class="scene-context mountain-context">
+            <path d="M-28 281 103 94l104 151 91-128 216 171v72H-28Z" fill="#91ad91" opacity=".68"/>
+            <path d="m67 147 36-53 34 49-27-15-13 15-11-10Z" fill="#edf0dc" opacity=".88"/>
+            <path d="m268 156 30-39 34 46-27-17-12 12-10-9Z" fill="#f4f0dc" opacity=".9"/>
+            <path d="M0 283Q98 252 195 286T390 278T480 270V360H0Z" fill="#789b70" opacity=".65"/>
+            <path d="M0 306q76-42 146-10t145 5q59-8 129-39" fill="none" stroke="#d8c38e" stroke-width="11" opacity=".75"/>
+        </g>`,
+        town: `<g class="scene-context town-context">
+            <path d="M0 245H480V360H0Z" fill="#c5b78f" opacity=".48"/>
+            <g stroke="#9a755a" stroke-width="3" stroke-linejoin="round">
+                <path d="M26 184h75v91H26Z" fill="#edc88f"/><path d="m18 185 45-42 47 42Z" fill="#bd7966"/>
+                <path d="M122 164h81v111h-81Z" fill="#e8d5ae"/><path d="m114 165 49-44 49 44Z" fill="#7e8491"/>
+                <path d="M220 195h78v80h-78Z" fill="#e5b981"/><path d="m213 196 45-39 47 39Z" fill="#c78068"/>
+                <path d="M321 172h94v103h-94Z" fill="#ead1a6"/><path d="m313 173 55-48 55 48Z" fill="#9a7f70"/>
+            </g>
+            <g fill="#8b9ca0"><path d="M45 207h15v21H45zm34 0h15v21H79zm64-14h16v22h-16zm28 0h16v22h-16zm-54 45h17v37h-17zm134-18h14v19h-14zm28 0h14v19h-14zm60-28h17v22h-17zm34 0h17v22h-17z"/></g>
+            <path d="M0 295q94-15 179 0t164 0q80-13 137 0v65H0Z" fill="#bea982" opacity=".55"/>
+        </g>`,
+        river: `<g class="scene-context river-context">
+            <path d="M0 176Q80 163 154 190T308 197T480 171V360H0Z" fill="#9fba8a" opacity=".52"/>
+            <path d="M-20 275Q65 236 140 267T286 263T500 213L500 299Q387 321 301 310T131 313T-20 345Z" fill="#78b9bd" opacity=".9"/>
+            <path d="M-15 291Q68 257 139 286T285 281T496 233" fill="none" stroke="#e2f0d8" stroke-width="7" opacity=".75"/>
+            <path d="M28 243v-35m0 10q-17-21-25-8m25 4q17-22 25-9m367 25v-40m0 15q-18-23-27-9m27 4q19-22 29-8" fill="none" stroke="#6f946e" stroke-width="5" stroke-linecap="round"/>
+        </g>`,
+        sea: `<g class="scene-context sea-context">
+            <path d="M0 184Q77 177 158 184T317 181T480 186V278Q405 268 336 282T183 276T0 291Z" fill="#78b9ca" opacity=".9"/>
+            <path d="M0 201q43-12 82 0t82 0 82 0 82 0 82 0 82 0" fill="none" stroke="#e3f3e7" stroke-width="5" opacity=".86"/>
+            <path d="M0 231q42-11 81 0t82 0 82 0 82 0 82 0 82 0" fill="none" stroke="#a8d9d5" stroke-width="4" opacity=".8"/>
+            <path d="M0 268Q91 251 174 267T328 264T480 276V360H0Z" fill="#e0c58f"/>
+            <path d="M0 281q97-16 181 0t160-2q71-8 139 1" fill="none" stroke="#f3dfad" stroke-width="7" opacity=".8"/>
+            <path d="M35 274q4-18 10-23m-10 23q-8-12-14-11m382 13q4-20 11-26m-11 26q-8-12-15-11" fill="none" stroke="#72956d" stroke-width="4" stroke-linecap="round"/>
+        </g>`,
+        garden: `<g class="scene-context meadow-context" fill="none" stroke="#769966" stroke-width="3" stroke-linecap="round">
+            <path d="M0 279Q81 254 161 277T320 277T480 266V360H0Z" fill="#a4c57e" stroke="none" opacity=".46"/>
+            <path d="M74 306q-6-18-14-22m14 22q2-18 11-25m254 22q-4-16-12-20m12 20q4-18 13-23m44 26q-1-12 8-18"/>
+            <path d="M125 311q22-8 39-1m156 3q18-9 31-3" stroke="#c0d893" stroke-width="4"/>
         </g>`
-        : scene.startsWith("seed-")
-            ? `<g class="scene-context meadow-context" fill="none" stroke="#769966" stroke-width="3" stroke-linecap="round">
-                <path d="M74 306q-6-18-14-22m14 22q2-18 11-25m254 22q-4-16-12-20m12 20q4-18 13-23m44 26q-1-12 8-18"/>
-                <path d="M125 311q22-8 39-1m156 3q18-9 31-3" stroke="#c0d893" stroke-width="4"/>
-            </g>`
-            : "";
+    };
+    const sceneContext = landscapes[details.place];
     const character = details.character === "rabbit"
         ? `<g class="character rabbit" stroke="#705447">
             <path d="M216 175 C195 119 201 67 225 78 C247 88 239 137 239 174Z" fill="#f3dfbd" stroke-width="5"/>
@@ -282,6 +356,7 @@ function illustrationFor(scene) {
         "river-pebbles": `<path d="M300 281q22-18 42 0t39 0" fill="none" stroke="#74aeb2" stroke-width="8" stroke-linecap="round"/><ellipse cx="312" cy="285" rx="12" ry="6" fill="#d0bd9e" stroke="#806d59" stroke-width="2"/><ellipse cx="354" cy="285" rx="13" ry="6" fill="#b8a58c" stroke="#806d59" stroke-width="2"/><path d="M330 249l7 9m13-15 6 10" stroke="#896447" stroke-width="7" stroke-linecap="round"/>`,
         "river-flow": `<path d="M299 273q20-18 40 0t40 0m-75 18q20-18 40 0t40 0" fill="none" stroke="#6eb6c0" stroke-width="7" stroke-linecap="round"/><path d="M320 246l5 8m16-11 5 8" stroke="#896447" stroke-width="8" stroke-linecap="round"/><path d="M328 264l6 5 6-5m5 18 6 5 6-5" fill="none" stroke="#eaf7ec" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`,
         "river-moon": `<path d="M354 106a34 34 0 1 0 34 46 28 28 0 0 1-34-46Z" fill="#ffe6a0" stroke="#a77c4d" stroke-width="4"/><path d="M305 281q35-21 74 0" fill="none" stroke="#79b4bd" stroke-width="7" stroke-linecap="round"/><path d="M321 222l4 9 10 1-7 6 2 10-9-5-8 5 2-10-7-6 10-1Z" fill="#fff2c6" stroke="#a77c4d" stroke-width="2.5" stroke-linejoin="round"/>`,
+        shell: `<g transform="translate(351 276)" stroke="#6d8fa0" stroke-width="4" stroke-linejoin="round"><path d="M-29 11Q-25-19 0-28Q25-19 29 11Q17 24 0 22Q-17 24-29 11Z" fill="#9fd6d8"/><path d="M-19 9Q-13-6-8-17m8 36V-22m8 31Q13-6 19-17" fill="none" stroke="#e7f0d4" stroke-width="3" stroke-linecap="round"/></g>`,
         "falling-star": `<g transform="translate(329 123) rotate(19)"><path d="M-58 20L-5 -3" stroke="#fff4cc" stroke-width="10" stroke-linecap="round" opacity=".65"/><path d="M0 -24L8 -7 27 -5 13 8 16 27 0 18 -17 27 -13 8 -27 -5 -8 -7Z" fill="#ffd66e" stroke="#a77c4d" stroke-width="4" stroke-linejoin="round"/></g>`,
         "sad-star": `<g transform="translate(337 227)"><path d="M0 -52L15 -18 51 -16 24 8 32 44 0 25 -32 44 -24 8 -51 -16 -15 -18Z" fill="#ffd66e" stroke="#a77c4d" stroke-width="4" stroke-linejoin="round"/><path d="M-11 -8v3M11 -8v3M-9 11q9 -8 18 0" fill="none" stroke="#73534b" stroke-width="3" stroke-linecap="round"/><path d="M-1 -2q6 7 11 0" fill="none" stroke="#8ab8c2" stroke-width="3" stroke-linecap="round"/></g>`,
         "hill-star": `<path d="M336 177L346 200 371 202 352 219 357 244 336 231 315 244 320 219 301 202 327 200Z" fill="#ffd66e" stroke="#a77c4d" stroke-width="4" stroke-linejoin="round"/><path d="M310 291 Q340 269 376 281" fill="none" stroke="#806249" stroke-width="4" stroke-linecap="round"/>`,
@@ -305,7 +380,7 @@ function illustrationFor(scene) {
             </filter>
         </defs>
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-            ${sceneContext}
+            ${sceneContext || ""}
             <g class="scene-props">${props[details.prop]}</g>
             ${character}
         </g>
@@ -323,9 +398,11 @@ function stopReading() {
 function showPage(index) {
     currentPage = index;
     const page = currentStory.pages[currentPage];
+    const scene = sceneDetails[page.scene];
 
     stopReading();
     art.dataset.scene = page.scene;
+    art.dataset.place = scene.place;
     illustration.innerHTML = illustrationFor(page.scene);
     kicker.textContent = page.kicker;
     title.textContent = page.title;

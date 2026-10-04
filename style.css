@@ -180,7 +180,6 @@ a {
     width: 100%;
     height: 100%;
     filter: drop-shadow(0 9px 3px rgba(59, 77, 53, .12));
-    animation: float 5.6s ease-in-out infinite;
 }
 
 .art-illustration svg {
@@ -194,10 +193,13 @@ a {
     stroke-width: 5;
     stroke-linecap: round;
     stroke-linejoin: round;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: float 5.6s ease-in-out infinite;
 }
 
 .art-illustration .scene-context {
-    opacity: .72;
+    opacity: .9;
 }
 
 .art-illustration .scene-props {
@@ -241,13 +243,6 @@ a {
     background-size: 100% 100%, 100% 100%, 9px 9px, 100% 7px;
     mix-blend-mode: soft-light;
     opacity: .72;
-}
-
-.art-sparkle {
-    position: absolute;
-    z-index: 5;
-    color: rgba(255, 255, 255, .88);
-    animation: twinkle 4.2s ease-in-out infinite;
 }
 
 .page-art[data-scene="cover"] {
@@ -380,42 +375,55 @@ a {
     --land: #8fbd77;
 }
 
-.page-art[data-scene^="river-"] {
+.page-art[data-place]::before,
+.page-art[data-place]::after,
+.page-art[data-place] .art-ground {
+    display: none;
+}
+
+.page-art[data-place="forest"] {
     background:
-        radial-gradient(ellipse at 77% 20%, rgba(255, 239, 178, .88) 0 8%, transparent 8.5%),
-        linear-gradient(180deg, #a8dce0 0%, #dce9c4 72%, #b6d394 100%);
-    --hill-back: #a7c995;
-    --land: #7eae83;
+        radial-gradient(ellipse at 76% 20%, rgba(255, 242, 192, .82) 0 7%, transparent 7.5%),
+        linear-gradient(180deg, #b8dfe0 0%, #e4ebc9 72%, #b9d39a 100%);
 }
 
-.page-art[data-scene="river-night"] {
+.page-art[data-place="night-forest"] {
     background:
-        radial-gradient(ellipse at 76% 22%, #fff0bd 0 5%, transparent 5.5%),
-        radial-gradient(ellipse at 19% 18%, #fff 0 1.5px, transparent 2px),
-        radial-gradient(ellipse at 52% 27%, #fff 0 1px, transparent 2px),
-        linear-gradient(180deg, #536b91 0%, #8597a0 69%, #9daa7c 100%);
-    --hill-back: #7a8d79;
-    --land: #667e68;
+        radial-gradient(ellipse at 77% 20%, rgba(255, 237, 181, .9) 0 6%, transparent 6.5%),
+        radial-gradient(ellipse at 18% 18%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(ellipse at 41% 30%, #fff 0 1px, transparent 2px),
+        radial-gradient(ellipse at 88% 39%, #fff 0 1px, transparent 2px),
+        linear-gradient(180deg, #53658b 0%, #86959b 70%, #77866e 100%);
 }
 
-.sparkle-one {
-    top: 19%;
-    left: 19%;
-    font-size: 1.6rem;
+.page-art[data-place="mountain"] {
+    background:
+        radial-gradient(ellipse at 78% 17%, rgba(255, 231, 175, .88) 0 8%, transparent 8.5%),
+        linear-gradient(180deg, #9fc9d9 0%, #e0e3cf 70%, #a3bd92 100%);
 }
 
-.sparkle-two {
-    top: 30%;
-    right: 17%;
-    font-size: 2rem;
-    animation-delay: .7s;
+.page-art[data-place="town"] {
+    background:
+        radial-gradient(ellipse at 79% 19%, rgba(255, 230, 166, .85) 0 8%, transparent 8.5%),
+        linear-gradient(180deg, #a9d7dd 0%, #f0dfb8 72%, #d2be91 100%);
 }
 
-.sparkle-three {
-    top: 17%;
-    right: 36%;
-    font-size: 3rem;
-    animation-delay: 1.2s;
+.page-art[data-place="river"] {
+    background:
+        radial-gradient(ellipse at 76% 19%, rgba(255, 242, 191, .86) 0 7%, transparent 7.5%),
+        linear-gradient(180deg, #9bd2dc 0%, #d8e7ca 72%, #9cbe91 100%);
+}
+
+.page-art[data-place="sea"] {
+    background:
+        radial-gradient(ellipse at 77% 17%, rgba(255, 230, 166, .9) 0 9%, transparent 9.5%),
+        linear-gradient(180deg, #8fc9df 0%, #c4e4df 66%, #e3d2a3 100%);
+}
+
+.page-art[data-place="garden"] {
+    background:
+        radial-gradient(ellipse at 77% 19%, rgba(255, 234, 169, .85) 0 8%, transparent 8.5%),
+        linear-gradient(180deg, #b9e5e5 0%, #edf0cd 70%, #b8d78f 100%);
 }
 
 .page-copy {
@@ -539,11 +547,6 @@ a:focus-visible {
 @keyframes float {
     0%, 100% { transform: translateY(0) rotate(-.5deg); }
     50% { transform: translateY(-3px) rotate(.5deg); }
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: .68; transform: scale(.96); }
-    50% { opacity: .9; transform: scale(1.04); }
 }
 
 @media (max-width: 620px) {
