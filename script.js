@@ -221,6 +221,18 @@ const sceneDetails = {
 
 function illustrationFor(scene) {
     const details = sceneDetails[scene];
+    const sceneContext = scene.startsWith("river-")
+        ? `<g class="scene-context river-context">
+            <path d="M0 279 Q86 252 163 276 T320 276 T480 265 L480 322 Q396 311 319 326 T158 317 T0 329Z" fill="#8fc5c1" opacity=".48"/>
+            <path d="M0 291 Q94 270 166 292 T321 291 T480 279" fill="none" stroke="#e7f1d1" stroke-width="5" opacity=".62"/>
+            <path d="M44 278q5-15 11-19m-11 19q-9-10-14-10m351-2q5-15 11-19m-11 19q-9-10-14-10" fill="none" stroke="#739a6f" stroke-width="4" stroke-linecap="round"/>
+        </g>`
+        : scene.startsWith("seed-")
+            ? `<g class="scene-context meadow-context" fill="none" stroke="#769966" stroke-width="3" stroke-linecap="round">
+                <path d="M74 306q-6-18-14-22m14 22q2-18 11-25m254 22q-4-16-12-20m12 20q4-18 13-23m44 26q-1-12 8-18"/>
+                <path d="M125 311q22-8 39-1m156 3q18-9 31-3" stroke="#c0d893" stroke-width="4"/>
+            </g>`
+            : "";
     const character = details.character === "rabbit"
         ? `<g class="character rabbit" stroke="#705447">
             <path d="M216 175 C195 119 201 67 225 78 C247 88 239 137 239 174Z" fill="#f3dfbd" stroke-width="5"/>
@@ -293,7 +305,8 @@ function illustrationFor(scene) {
             </filter>
         </defs>
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-            ${props[details.prop]}
+            ${sceneContext}
+            <g class="scene-props">${props[details.prop]}</g>
             ${character}
         </g>
         <rect x="0" y="0" width="480" height="360" filter="url(#paper-grain)" opacity=".22" pointer-events="none"/>

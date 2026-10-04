@@ -196,6 +196,18 @@ a {
     stroke-linejoin: round;
 }
 
+.art-illustration .scene-context {
+    opacity: .72;
+}
+
+.art-illustration .scene-props {
+    opacity: .88;
+}
+
+.art-illustration .river-context {
+    stroke-linejoin: round;
+}
+
 .art-illustration .character path,
 .art-illustration .character ellipse {
     vector-effect: non-scaling-stroke;
