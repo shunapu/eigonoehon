@@ -3,7 +3,7 @@ const pages = [
         kicker: "A tiny adventure",
         title: "Pip and the Little Light",
         lines: ["A little story about helping a friend."],
-        emoji: "🐭",
+        emoji: "🐭📖",
         sky: "#c5e9e5",
         land: "#abd68e"
     },
@@ -11,7 +11,7 @@ const pages = [
         kicker: "Page 1",
         title: "A Starry Night",
         lines: ["Pip the mouse looks up.", "A little star falls down!"],
-        emoji: "🐭⭐",
+        emoji: "🐭🌠",
         sky: "#7e9ac5",
         land: "#88a77f"
     },
@@ -19,7 +19,7 @@ const pages = [
         kicker: "Page 2",
         title: "A Tiny Hello",
         lines: ["The star is sad.", "“I can't fly home,” it says."],
-        emoji: "🐭✨",
+        emoji: "🐭🥺⭐",
         sky: "#859bc2",
         land: "#97b582"
     },
@@ -27,7 +27,7 @@ const pages = [
         kicker: "Page 3",
         title: "Up the Hill",
         lines: ["“I can help!” says Pip.", "They walk up the big hill."],
-        emoji: "🐭⛰️",
+        emoji: "🐭⛰️⭐",
         sky: "#f3c98e",
         land: "#92bb7c"
     },
@@ -35,7 +35,7 @@ const pages = [
         kicker: "Page 4",
         title: "One, Two, Three!",
         lines: ["Pip gives the star a lift.", "One, two, three… up it goes!"],
-        emoji: "🐭✨",
+        emoji: "🐭🤲✨",
         sky: "#efb6a2",
         land: "#aacd88"
     },
@@ -51,7 +51,7 @@ const pages = [
         kicker: "The end",
         title: "A Bright Good Night",
         lines: ["Pip smiles at the sky.", "A kind friend makes the night bright."],
-        emoji: "🐭💛",
+        emoji: "🐭💛✨",
         sky: "#a3bdd0",
         land: "#9bc489"
     }
