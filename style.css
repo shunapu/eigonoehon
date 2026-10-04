@@ -153,19 +153,24 @@ a {
 }
 
 .page-art::before {
-    width: 82%;
-    height: 155px;
-    bottom: 62px;
-    left: -25%;
+    width: 88%;
+    height: 175px;
+    bottom: 66px;
+    left: -29%;
+    border-radius: 46% 54% 11% 8% / 31% 43% 0 0;
     background: var(--hill-back);
+    transform: rotate(-2deg);
 }
 
 .page-art::after {
-    width: 92%;
-    height: 125px;
-    right: -33%;
-    bottom: 50px;
+    width: 76%;
+    height: 145px;
+    right: -27%;
+    bottom: 47px;
+    border-radius: 48% 52% 6% 8% / 42% 28% 0 0;
     background: var(--hill-back);
+    opacity: .82;
+    transform: rotate(3deg);
 }
 
 .art-illustration {
@@ -200,19 +205,35 @@ a {
     position: absolute;
     z-index: 1;
     right: -12%;
-    bottom: -73px;
+    bottom: -76px;
     left: -12%;
-    height: 155px;
-    border-radius: 48% 52% 0 0 / 30% 35% 0 0;
+    height: 165px;
+    border-radius: 47% 53% 0 0 / 24% 34% 0 0;
     background:
-        radial-gradient(ellipse at 31% 21%, rgba(255, 255, 255, .19) 0 2px, transparent 3px),
+        repeating-linear-gradient(166deg, transparent 0 13px, rgba(255, 255, 255, .08) 14px 15px, transparent 16px 28px),
+        radial-gradient(ellipse at 26% 18%, rgba(255, 255, 255, .2), transparent 50%),
         var(--land);
     transition: background .3s ease;
 }
 
+.art-paper-texture {
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(ellipse at 22% 27%, rgba(255, 255, 255, .25), transparent 40%),
+        radial-gradient(ellipse at 79% 66%, rgba(79, 57, 40, .11), transparent 47%),
+        repeating-radial-gradient(circle at 27% 31%, rgba(71, 54, 39, .24) 0 .45px, transparent .7px 4px),
+        repeating-linear-gradient(3deg, rgba(255, 255, 255, .11) 0 1px, transparent 1px 5px);
+    background-size: 100% 100%, 100% 100%, 9px 9px, 100% 7px;
+    mix-blend-mode: soft-light;
+    opacity: .72;
+}
+
 .art-sparkle {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     color: rgba(255, 255, 255, .88);
     animation: twinkle 2.1s ease-in-out infinite;
 }
@@ -550,6 +571,7 @@ a:focus-visible {
         width: 180px;
         height: 180px;
         top: 18px;
+        bottom: auto;
     }
 
     .page-art::after {
