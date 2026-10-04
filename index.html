@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="theme-color" content="#fff8e9">
+    <title>Pip and the Little Light | A Little English Story</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    絵本だ
+    <main class="storybook" aria-label="Interactive English picture book">
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="Pip and the Little Light home">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <span>A LITTLE ENGLISH STORY</span>
+            </a>
+            <button class="sound-button" id="read-aloud" type="button" aria-label="Read this page aloud">
+                <span aria-hidden="true">🔊</span>
+                <span id="read-label">Read to me</span>
+            </button>
+        </header>
+
+        <section class="book" aria-label="Story">
+            <div class="page-art" id="page-art" aria-hidden="true">
+                <span class="art-sparkle sparkle-one">✦</span>
+                <span class="art-sparkle sparkle-two">✧</span>
+                <span class="art-sparkle sparkle-three">·</span>
+                <span class="art-emoji" id="page-emoji"></span>
+                <span class="art-ground" aria-hidden="true"></span>
+            </div>
+            <div class="page-copy">
+                <p class="page-kicker" id="page-kicker"></p>
+                <h1 id="page-title"></h1>
+                <div class="story-text" id="story-text" aria-live="polite" aria-atomic="true"></div>
+            </div>
+        </section>
+
+        <footer class="page-controls">
+            <button class="nav-button" id="previous-page" type="button" aria-label="Previous page">
+                <span aria-hidden="true">←</span>
+                <span>Back</span>
+            </button>
+            <div class="page-status" aria-live="polite">
+                <div class="progress-track" role="progressbar" id="progress" aria-label="Story progress" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1">
+                    <span class="progress-fill" id="progress-fill"></span>
+                </div>
+                <span id="page-count">1 / 7</span>
+            </div>
+            <button class="nav-button next-button" id="next-page" type="button" aria-label="Next page">
+                <span id="next-label">Next</span>
+                <span aria-hidden="true">→</span>
+            </button>
+        </footer>
+        <p class="helper-text">Tap “Read to me” to hear the story.</p>
+    </main>
 </body>
 </html>
