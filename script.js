@@ -4,56 +4,49 @@ const pages = [
         title: "Pip and the Little Light",
         lines: ["A little story about helping a friend."],
         emoji: "🐭📖",
-        sky: "#c5e9e5",
-        land: "#abd68e"
+        scene: "cover"
     },
     {
         kicker: "Page 1",
         title: "A Starry Night",
         lines: ["Pip the mouse looks up.", "A little star falls down!"],
         emoji: "🐭🌠",
-        sky: "#7e9ac5",
-        land: "#88a77f"
+        scene: "falling-star"
     },
     {
         kicker: "Page 2",
         title: "A Tiny Hello",
         lines: ["The star is sad.", "“I can't fly home,” it says."],
         emoji: "🐭🥺⭐",
-        sky: "#859bc2",
-        land: "#97b582"
+        scene: "little-friend"
     },
     {
         kicker: "Page 3",
         title: "Up the Hill",
         lines: ["“I can help!” says Pip.", "They walk up the big hill."],
         emoji: "🐭⛰️⭐",
-        sky: "#f3c98e",
-        land: "#92bb7c"
+        scene: "up-the-hill"
     },
     {
         kicker: "Page 4",
         title: "One, Two, Three!",
         lines: ["Pip gives the star a lift.", "One, two, three… up it goes!"],
         emoji: "🐭🤲✨",
-        sky: "#efb6a2",
-        land: "#aacd88"
+        scene: "the-lift"
     },
     {
         kicker: "Page 5",
         title: "Back with Friends",
         lines: ["The star is home at last.", "“Thank you, Pip!”"],
         emoji: "🐭🌟🌙",
-        sky: "#737fac",
-        land: "#829778"
+        scene: "starry-home"
     },
     {
         kicker: "The end",
         title: "A Bright Good Night",
         lines: ["Pip smiles at the sky.", "A kind friend makes the night bright."],
         emoji: "🐭💛✨",
-        sky: "#a3bdd0",
-        land: "#9bc489"
+        scene: "good-night"
     }
 ];
 
@@ -85,8 +78,7 @@ function showPage(index) {
     const page = pages[currentPage];
 
     stopReading();
-    art.style.setProperty("--sky", page.sky);
-    art.style.setProperty("--land", page.land);
+    art.dataset.scene = page.scene;
     emoji.textContent = page.emoji;
     kicker.textContent = page.kicker;
     title.textContent = page.title;

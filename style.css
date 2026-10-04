@@ -107,43 +107,48 @@ a {
 .page-art {
     --sky: #bce8e2;
     --land: #a8d58b;
+    --hill-back: #c1d99b;
+    --hill-front: #a8d58b;
     position: relative;
     min-height: 440px;
     overflow: hidden;
     display: grid;
     place-items: center;
     isolation: isolate;
-    background: linear-gradient(180deg, var(--sky) 0%, #e7f5dc 78%, #d4e9bd 100%);
-    transition: background .3s ease;
+    background:
+        radial-gradient(ellipse at 74% 27%, rgba(255, 244, 186, .9) 0 7%, transparent 7.5%),
+        linear-gradient(180deg, var(--sky) 0%, #e7f5dc 78%, #d4e9bd 100%);
+    transition: background .4s ease;
 }
 
 .page-art::before,
 .page-art::after {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     content: "";
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .page-art::before {
-    width: 250px;
-    height: 250px;
-    top: 46px;
-    right: -94px;
-    background: rgba(255, 255, 255, .34);
+    width: 82%;
+    height: 155px;
+    bottom: 62px;
+    left: -25%;
+    background: var(--hill-back);
 }
 
 .page-art::after {
-    width: 210px;
-    height: 210px;
-    left: -92px;
-    bottom: 52px;
-    background: rgba(255, 255, 255, .3);
+    width: 92%;
+    height: 125px;
+    right: -33%;
+    bottom: 50px;
+    background: var(--hill-back);
 }
 
 .art-emoji {
-    z-index: 1;
-    margin-top: -16px;
+    z-index: 2;
+    margin-top: -34px;
     font-size: clamp(7rem, 18vw, 10.5rem);
     line-height: 1;
     filter: drop-shadow(0 12px 3px rgba(59, 77, 53, .12));
@@ -152,19 +157,95 @@ a {
 
 .art-ground {
     position: absolute;
-    right: -10%;
-    bottom: -54px;
-    left: -10%;
-    height: 132px;
-    border-radius: 50% 50% 0 0 / 42% 42% 0 0;
-    background: var(--land);
+    z-index: 1;
+    right: -12%;
+    bottom: -73px;
+    left: -12%;
+    height: 155px;
+    border-radius: 48% 52% 0 0 / 30% 35% 0 0;
+    background:
+        radial-gradient(ellipse at 31% 21%, rgba(255, 255, 255, .19) 0 2px, transparent 3px),
+        var(--land);
     transition: background .3s ease;
 }
 
 .art-sparkle {
     position: absolute;
+    z-index: 3;
     color: rgba(255, 255, 255, .88);
     animation: twinkle 2.1s ease-in-out infinite;
+}
+
+.page-art[data-scene="cover"] {
+    background:
+        radial-gradient(ellipse at 74% 27%, #fff1b9 0 7%, transparent 7.5%),
+        radial-gradient(ellipse at 24% 25%, rgba(255, 255, 255, .58) 0 5%, transparent 5.5%),
+        linear-gradient(180deg, #bce8e2 0%, #e9f2ce 76%, #d6e8b5 100%);
+    --hill-back: #c1d99b;
+    --land: #a8d58b;
+}
+
+.page-art[data-scene="falling-star"] {
+    background:
+        radial-gradient(ellipse at 78% 18%, #fff5cb 0 5%, transparent 5.5%),
+        radial-gradient(ellipse at 22% 24%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(ellipse at 42% 14%, #fff 0 1px, transparent 2px),
+        radial-gradient(ellipse at 62% 31%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(ellipse at 87% 42%, #fff 0 1px, transparent 2px),
+        linear-gradient(180deg, #344c83 0%, #778eb6 72%, #bdc89d 100%);
+    --hill-back: #687e90;
+    --land: #485f62;
+}
+
+.page-art[data-scene="little-friend"] {
+    background:
+        radial-gradient(ellipse at 51% 42%, rgba(255, 225, 157, .38), transparent 32%),
+        radial-gradient(ellipse at 83% 19%, #fff2c5 0 5%, transparent 5.5%),
+        radial-gradient(ellipse at 20% 24%, rgba(255, 255, 255, .76) 0 3%, transparent 3.5%),
+        linear-gradient(180deg, #7189b0 0%, #a9b7c6 73%, #d4c99f 100%);
+    --hill-back: #82938d;
+    --land: #647b68;
+}
+
+.page-art[data-scene="up-the-hill"] {
+    background:
+        radial-gradient(ellipse at 76% 25%, #ffdfa0 0 11%, transparent 11.5%),
+        linear-gradient(155deg, transparent 0 43%, #d8a86e 43.3% 57%, transparent 57.3%),
+        linear-gradient(180deg, #f4c98e 0%, #f8dfaa 62%, #a9c67f 100%);
+    --hill-back: #b1c27b;
+    --land: #769b64;
+}
+
+.page-art[data-scene="the-lift"] {
+    background:
+        radial-gradient(ellipse at 52% 50%, rgba(255, 242, 164, .92) 0 9%, rgba(255, 221, 129, .4) 9.5% 21%, transparent 45%),
+        radial-gradient(ellipse at 78% 19%, rgba(255, 249, 215, .9) 0 5%, transparent 5.5%),
+        linear-gradient(180deg, #e8a59d 0%, #f6c3a0 61%, #d4ca8c 100%);
+    --hill-back: #d5ad7b;
+    --land: #91ad70;
+}
+
+.page-art[data-scene="starry-home"] {
+    background:
+        radial-gradient(ellipse at 73% 21%, #fff4bf 0 6%, transparent 6.5%),
+        radial-gradient(ellipse at 18% 20%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(ellipse at 39% 34%, #fff 0 1px, transparent 2px),
+        radial-gradient(ellipse at 57% 13%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(ellipse at 89% 39%, #fff 0 1px, transparent 2px),
+        linear-gradient(180deg, #343c70 0%, #656e98 68%, #9c9a8c 100%);
+    --hill-back: #5d6579;
+    --land: #4d6156;
+}
+
+.page-art[data-scene="good-night"] {
+    background:
+        radial-gradient(ellipse at 76% 23%, #fff3c2 0 7%, transparent 7.5%),
+        radial-gradient(ellipse at 18% 19%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(ellipse at 46% 28%, #fff 0 1px, transparent 2px),
+        radial-gradient(ellipse at 91% 37%, #fff 0 1px, transparent 2px),
+        linear-gradient(180deg, #879bb8 0%, #c6c5ae 70%, #d9d5a0 100%);
+    --hill-back: #a5b987;
+    --land: #829c74;
 }
 
 .sparkle-one {
