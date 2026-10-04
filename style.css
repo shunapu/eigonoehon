@@ -62,6 +62,28 @@ a {
     font-size: 1.25rem;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.story-picker select {
+    max-width: 240px;
+    padding: 9px 32px 9px 13px;
+    border: 1px solid #eadfc9;
+    border-radius: 999px;
+    color: #596575;
+    background: #fffefa;
+    font-size: .82rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
 .sound-button,
 .nav-button {
     border: 0;
@@ -248,6 +270,64 @@ a {
     --land: #829c74;
 }
 
+.page-art[data-scene="seed-cover"] {
+    background:
+        radial-gradient(ellipse at 78% 24%, #ffe9a4 0 8%, transparent 8.5%),
+        linear-gradient(180deg, #b9e5e5 0%, #e8f1c9 70%, #c4dc9a 100%);
+    --hill-back: #b2d28d;
+    --land: #8dbd78;
+}
+
+.page-art[data-scene="seed-found"] {
+    background:
+        radial-gradient(ellipse at 76% 25%, #fff0bf 0 10%, transparent 10.5%),
+        radial-gradient(ellipse at 20% 26%, rgba(255, 255, 255, .8) 0 5%, transparent 5.5%),
+        linear-gradient(180deg, #a8dfe0 0%, #e4efc1 70%, #a8d18a 100%);
+    --hill-back: #b4d28f;
+    --land: #8bb775;
+}
+
+.page-art[data-scene="seed-planted"] {
+    background:
+        linear-gradient(180deg, #a9dfe0 0%, #d9edc4 61%, #a98662 61.5% 100%);
+    --hill-back: #b3ca8d;
+    --land: #795d48;
+}
+
+.page-art[data-scene="seed-watered"] {
+    background:
+        radial-gradient(ellipse at 77% 20%, rgba(255, 247, 202, .9) 0 8%, transparent 8.5%),
+        linear-gradient(180deg, #a9d8ed 0%, #e3f1da 72%, #bed794 100%);
+    --hill-back: #b7d294;
+    --land: #8fbe7c;
+}
+
+.page-art[data-scene="seed-waiting"] {
+    background:
+        radial-gradient(ellipse at 75% 21%, #fff0b1 0 9%, transparent 9.5%),
+        linear-gradient(180deg, #f2c987 0%, #f6e3b0 66%, #a8ce85 100%);
+    --hill-back: #b6ce8a;
+    --land: #8db775;
+}
+
+.page-art[data-scene="seed-sprout"] {
+    background:
+        radial-gradient(ellipse at 50% 54%, rgba(255, 248, 171, .8) 0 10%, rgba(255, 248, 171, .3) 10.5% 25%, transparent 50%),
+        radial-gradient(ellipse at 79% 20%, #fff0b1 0 8%, transparent 8.5%),
+        linear-gradient(180deg, #a9dfe3 0%, #e8f2c2 68%, #b4d890 100%);
+    --hill-back: #c0d993;
+    --land: #8fc47c;
+}
+
+.page-art[data-scene="seed-flower"] {
+    background:
+        radial-gradient(ellipse at 76% 22%, #ffe7a5 0 10%, transparent 10.5%),
+        radial-gradient(ellipse at 20% 19%, rgba(255, 255, 255, .72) 0 5%, transparent 5.5%),
+        linear-gradient(180deg, #a8dfe1 0%, #f4e9be 67%, #b8d58b 100%);
+    --hill-back: #bdd493;
+    --land: #8fbd77;
+}
+
 .sparkle-one {
     top: 19%;
     left: 19%;
@@ -410,6 +490,20 @@ a:focus-visible {
         gap: 6px;
         font-size: .59rem;
         letter-spacing: .1em;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .story-picker {
+        order: 1;
+        width: 100%;
+    }
+
+    .story-picker select {
+        width: 100%;
+        max-width: none;
     }
 
     .sound-button {
